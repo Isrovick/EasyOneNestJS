@@ -117,7 +117,7 @@ export const caseJson_2 = `{
       "eventVersion": "1.0",
       "ses": {
         "receipt": {
-          "timestamp": "2016-1-11T20:32:33.936Z",
+          "timestamp": "2016-12-11T20:32:33.936Z",
           "processingTimeMillis": 12000,
           "recipients": [
             "recipient.123@example.com"
@@ -135,7 +135,7 @@ export const caseJson_2 = `{
             "status": "PASS"
           },
           "dmarcVerdict": {
-            "status": "PASS"
+            "status": "FOO"
           },
           "dmarcPolicy": "reject",
           "action": {
@@ -144,7 +144,7 @@ export const caseJson_2 = `{
           }
         },
         "mail": {
-          "timestamp": "2016-1-11T20:32:33.936Z",
+          "timestamp": "2016-12-11T20:32:33.936Z",
           "source": "se.n._der@example.com",
           "messageId": "d6iitobk75ur44p8kdnnp7g2n800",
           "destination": [

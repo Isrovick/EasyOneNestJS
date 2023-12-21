@@ -19,7 +19,7 @@ describe('ConverterService', () => {
   });
 
   it('should return all values from expectation 1 ', () => {
-    const result = service.convert(caseJson_2)?.[0];
+    const result = service.convert(caseJson_1)?.[0];
     if (!result) {
       throw new Error('result is undefined');
     }
@@ -37,7 +37,7 @@ describe('ConverterService', () => {
   });
 
   it('should return expected values ', () => {
-    const result = service.convert(caseJson_1)?.[0];
+    const result = service.convert(caseJson_2)?.[0];
     if (!result) {
       throw new Error('result is undefined');
     }
@@ -45,7 +45,7 @@ describe('ConverterService', () => {
     expect(result?.spam).toEqual(false);
     expect(result?.virus).toEqual(true);
     expect(result?.dns).toEqual(false);
-    expect(result?.mes).toEqual('ENERO');
+    expect(result?.mes).toEqual('DICIEMBRE');
     expect(result?.retrasado).toEqual(true);
     expect(result?.emisor).toEqual('se.n._der');
     expect(result?.receptor).toEqual(['recipient.123']);

@@ -4,14 +4,7 @@ import { SingleExpectationType } from '../types/converter.type';
 @Injectable()
 export class ConverterService {
   constructor() {}
-  convert(source: string): Array<SingleExpectationType> {
-    let _source;
-    try {
-      _source = JSON.parse(source);
-    } catch (e) {
-      throw new BadRequestException('Invalid JSON');
-    }
-
+  convert(_source): Array<SingleExpectationType> {
     const records = _source?.Records;
     if (!records?.length) {
       throw new BadRequestException('Invalid JSON, Missing records object.');
@@ -26,7 +19,7 @@ export class ConverterService {
     }
 
     const receipt = record?.ses?.receipt;
-    const mail = receipt?.mail;
+    const mail = record?.ses?.mail;
 
     const spam = receipt?.spamVerdict?.status === 'PASS';
 
@@ -37,9 +30,11 @@ export class ConverterService {
       receipt?.dkimVerdict?.status === 'PASS' &&
       receipt?.dmarcVerdict?.status === 'PASS';
 
-    const mes = new Date(mail?.timestamp).toLocaleString('es-ES', {
-      month: 'long',
-    });
+    const mes = new Date(mail?.timestamp)
+      ?.toLocaleString('es-ES', {
+        month: 'long',
+      })
+      ?.toUpperCase();
 
     const retrasado = receipt?.processingTimeMillis > 1000;
 

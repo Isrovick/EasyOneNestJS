@@ -58,6 +58,27 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Documentation
+
+Once de program is running, you can test the endpoint in the following link:
+
+```bash
+http://localhost:3000/converter
+```
+By doing a POST request with the body:
+
+```bash
+{
+    "Records": [
+    {
+      "eventVersion": "1.0",
+      "ses": {
+        ...........
+}
+```
+like the picture below:
+
+![img_1.png](img_1.png)
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
